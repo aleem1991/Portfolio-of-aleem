@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aleem - Data Science Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -30,7 +33,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         html {
@@ -72,7 +75,7 @@
         }
         
         body.dark header.scrolled {
-            background-color: rgba(31, 41, 55, 0.8);
+            background-color: rgba(17, 24, 39, 0.8);
         }
         
         nav {
@@ -109,6 +112,7 @@
             text-decoration: none;
             text-transform: capitalize;
             transition: color 0.3s ease;
+            font-weight: 500;
         }
         
         body.dark .nav-link {
@@ -136,17 +140,18 @@
             font-weight: 600;
             padding: 0.75rem 2rem;
             border-radius: 9999px;
-            background: linear-gradient(to right, var(--teal-400), var(--blue-500));
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            background-image: linear-gradient(to right, var(--teal-400), var(--blue-500));
+            background-size: 200% auto;
+            box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.3);
             transition: all 0.3s ease;
             text-decoration: none;
             text-align: center;
         }
         
         .gradient-button:hover {
+            background-position: right center;
             transform: scale(1.05);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            background: linear-gradient(to right, var(--teal-500), var(--blue-600));
+            box-shadow: 0 10px 20px rgba(49, 196, 190, 0.4);
         }
         
         .gradient-button:active {
@@ -171,7 +176,7 @@
             background-color: transparent;
             border: none;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         
         body.dark .theme-toggle {
@@ -180,15 +185,18 @@
         
         .theme-toggle:hover {
             background-color: var(--gray-200);
+            color: var(--teal-500);
         }
         
         body.dark .theme-toggle:hover {
             background-color: var(--gray-700);
+            color: var(--teal-400);
         }
         
         /* Profile Section */
         .profile-section {
-            padding: 6rem 1rem 3rem;
+            padding-top: 8rem;
+            padding-bottom: 4rem;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -197,11 +205,11 @@
         .profile-content {
             display: flex;
             flex-direction: column;
-            gap: 3rem;
+            gap: 4rem;
             width: 100%;
         }
         
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
             .profile-content {
                 flex-direction: row;
                 align-items: center;
@@ -210,25 +218,26 @@
         }
         
         .profile-text {
-            flex: 1;
+            flex: 1.2;
             text-align: center;
         }
         
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
             .profile-text {
                 text-align: left;
             }
         }
         
         .profile-heading {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 1.5rem;
+            line-height: 1.2;
         }
         
         @media (min-width: 768px) {
             .profile-heading {
-                font-size: 3.75rem;
+                font-size: 4.5rem;
             }
         }
         
@@ -242,9 +251,9 @@
         .profile-bio {
             font-size: 1.125rem;
             color: var(--gray-600);
-            max-width: 36rem;
-            margin: 0 auto 2rem;
-            line-height: 1.6;
+            max-width: 40rem;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
         }
         
         body.dark .profile-bio {
@@ -259,83 +268,44 @@
             flex-wrap: wrap;
         }
         
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
             .profile-actions {
                 justify-content: flex-start;
             }
         }
         
         .social-icon {
-            padding: 0.75rem;
-            border-radius: 9999px;
+            font-size: 1.25rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
             color: var(--gray-700);
-            background-color: var(--gray-100);
-            transition: background-color 0.3s ease;
+            background-color: white;
+            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
         
         body.dark .social-icon {
             color: var(--gray-300);
             background-color: var(--gray-800);
+            box-shadow: none;
         }
         
         .social-icon:hover {
-            background-color: var(--gray-200);
+            transform: translateY(-5px);
+            background: linear-gradient(to right, var(--teal-400), var(--blue-500));
+            color: white;
+            box-shadow: 0 8px 15px rgba(49, 196, 190, 0.3);
         }
         
         body.dark .social-icon:hover {
-            background-color: var(--gray-700);
+             box-shadow: 0 8px 15px rgba(49, 196, 190, 0.2);
         }
-        
-        .rewrite-bio {
-            position: relative;
-        }
-        
-        .tone-selector {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            margin-top: 0.5rem;
-            width: 12rem;
-            background-color: white;
-            border-radius: 0.5rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            z-index: 10;
-            display: none;
-        }
-        
-        body.dark .tone-selector {
-            background-color: var(--gray-800);
-        }
-        
-        .tone-option {
-            display: block;
-            width: 100%;
-            padding: 0.75rem 1rem;
-            text-align: left;
-            font-size: 0.875rem;
-            color: var(--gray-700);
-            background: none;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        
-        body.dark .tone-option {
-            color: var(--gray-300);
-        }
-        
-        .tone-option:hover {
-            background-color: var(--teal-50);
-        }
-        
-        body.dark .tone-option:hover {
-            background-color: var(--gray-700);
-        }
-        
+
         .profile-image {
             flex: 1;
             display: flex;
@@ -345,14 +315,14 @@
         
         .profile-image-container {
             position: relative;
-            width: 16rem;
-            height: 16rem;
+            width: 18rem;
+            height: 18rem;
         }
         
         @media (min-width: 768px) {
             .profile-image-container {
-                width: 20rem;
-                height: 20rem;
+                width: 22rem;
+                height: 22rem;
             }
         }
         
@@ -361,8 +331,14 @@
             inset: 0;
             background: linear-gradient(to right, var(--teal-400), var(--blue-500));
             border-radius: 9999px;
-            filter: blur(1rem);
-            opacity: 0.5;
+            filter: blur(2rem);
+            opacity: 0.6;
+            transition: all 0.5s ease;
+        }
+
+        .profile-image-container:hover .profile-image-glow {
+            transform: scale(1.05);
+            opacity: 0.8;
         }
         
         .profile-img {
@@ -371,7 +347,7 @@
             height: 100%;
             border-radius: 9999px;
             object-fit: cover;
-            border: 4px solid white;
+            border: 6px solid white;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
         
@@ -381,38 +357,45 @@
         
         /* Section Styles */
         .section {
-            padding: 5rem 1rem;
+            padding: 6rem 1rem;
         }
         
         .section-title {
-            font-size: 2.25rem;
+            font-size: 2.5rem;
             font-weight: 700;
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 4rem;
         }
         
         /* About Section */
+        #about {
+            background-color: white;
+        }
+        body.dark #about {
+            background-color: var(--gray-800);
+        }
+
         .about-grid {
             display: grid;
             gap: 2rem;
         }
         
-        @media (min-width: 768px) {
+        @media (min-width: 992px) {
             .about-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 4rem;
+                align-items: start;
             }
         }
         
-        .about-card {
-            background-color: white;
+        .about-card, .skills-card {
+            background-color: var(--gray-50);
             border-radius: 1rem;
             padding: 2rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
         
-        body.dark .about-card {
-            background-color: var(--gray-800);
+        body.dark .about-card, body.dark .skills-card {
+            background-color: var(--gray-900);
         }
         
         .about-card-title {
@@ -441,56 +424,164 @@
         body.dark .education-detail {
             color: var(--gray-400);
         }
-        
+
+        /* Revamped Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 1.5rem;
+            text-align: center;
+        }
+
         .skill-item {
-            margin-bottom: 1rem;
-        }
-        
-        .skill-header {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            margin-bottom: 0.25rem;
+            gap: 0.75rem;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 0.75rem;
+            transition: all 0.3s ease;
         }
-        
+        body.dark .skill-item {
+            background-color: var(--gray-800);
+        }
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+        body.dark .skill-item:hover {
+            background-color: var(--gray-700);
+        }
+        .skill-item i {
+            font-size: 2.5rem;
+            color: var(--teal-500);
+        }
         .skill-name {
             font-weight: 500;
             color: var(--gray-700);
         }
-        
         body.dark .skill-name {
             color: var(--gray-300);
         }
         
-        .skill-percent {
-            font-size: 0.875rem;
+        /* Generic Card Styles */
+        .card {
+            background-color: white;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            border-top: 4px solid transparent;
+            display: flex;
+            flex-direction: column;
+        }
+
+        body.dark .card {
+            background-color: var(--gray-800);
+            box-shadow: none;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .card-border-gradient {
+             border-image: linear-gradient(to right, var(--teal-400), var(--blue-500)) 1;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .card:hover .card-title {
+            color: var(--teal-500);
+        }
+
+        body.dark .card:hover .card-title {
+            color: var(--teal-400);
+        }
+
+        /* Projects Section */
+        #projects {
+            background-color: var(--gray-100);
+        }
+        body.dark #projects {
+            background-color: var(--gray-900);
+        }
+
+        .projects-grid {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .projects-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .project-description {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        body.dark .project-description {
+            color: var(--gray-400);
+        }
+
+        .project-footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project-tech-stack {
+            font-size: 0.9rem;
             font-weight: 500;
             color: var(--gray-500);
         }
-        
-        body.dark .skill-percent {
+        body.dark .project-tech-stack {
             color: var(--gray-400);
         }
-        
-        .skill-bar {
-            width: 100%;
-            height: 0.5rem;
-            background-color: var(--gray-200);
-            border-radius: 9999px;
-            overflow: hidden;
+        .project-tech-stack strong {
+            color: var(--gray-700);
         }
-        
-        body.dark .skill-bar {
-            background-color: var(--gray-700);
+        body.dark .project-tech-stack strong {
+            color: var(--gray-300);
         }
-        
-        .skill-progress {
-            height: 100%;
-            background: linear-gradient(to right, var(--teal-400), var(--blue-500));
-            border-radius: 9999px;
-            transform-origin: left;
-            transform: scaleX(0);
-            transition: transform 1s ease;
+
+        .project-link, .certificate-link {
+            display: inline-block;
+            font-weight: 600;
+            color: var(--teal-500);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .project-link:hover, .certificate-link:hover {
+            color: var(--blue-500);
+            transform: translateX(2px);
         }
         
         /* Certificates Section */
@@ -511,42 +602,6 @@
             }
         }
         
-        .certificate-card {
-            background-color: white;
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-        
-        body.dark .certificate-card {
-            background-color: var(--gray-800);
-        }
-        
-        .certificate-card:hover {
-            transform: translateY(-0.5rem);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        
-        .certificate-content {
-            padding: 1.5rem;
-        }
-        
-        .certificate-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            transition: color 0.3s ease;
-        }
-        
-        .certificate-card:hover .certificate-title {
-            color: var(--teal-500);
-        }
-        
-        body.dark .certificate-card:hover .certificate-title {
-            color: var(--teal-400);
-        }
-        
         .certificate-issuer {
             color: var(--gray-600);
             margin-bottom: 1rem;
@@ -556,28 +611,14 @@
             color: var(--gray-400);
         }
         
-        .certificate-download {
-            display: flex;
-            align-items: center;
-            font-weight: 600;
-            color: var(--teal-600);
-            text-decoration: none;
-        }
-        
-        body.dark .certificate-download {
-            color: var(--teal-400);
-        }
-        
-        .certificate-download i {
-            margin-left: 0.5rem;
-            transition: transform 0.3s ease;
-        }
-        
-        .certificate-card:hover .certificate-download i {
-            transform: translateY(2px);
-        }
-        
         /* Contact Section */
+        #contact {
+            background-color: white;
+        }
+        body.dark #contact {
+            background-color: var(--gray-800);
+        }
+        
         .contact-container {
             max-width: 42rem;
             margin: 0 auto;
@@ -597,19 +638,18 @@
         }
         
         .contact-form {
-            background-color: white;
+            background-color: var(--gray-50);
             border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 2.5rem;
             text-align: left;
         }
         
         body.dark .contact-form {
-            background-color: var(--gray-800);
+            background-color: var(--gray-900);
         }
         
         .form-group {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
         
         .form-label {
@@ -617,71 +657,39 @@
             font-size: 0.875rem;
             font-weight: 500;
             color: var(--gray-700);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.5rem;
         }
         
         body.dark .form-label {
             color: var(--gray-300);
         }
         
-        .form-input {
-            width: 100;
-            padding: 0.5rem 0.75rem;
-            background-color: var(--gray-50);
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background-color: white;
             border: 1px solid var(--gray-300);
-            border-radius: 0.375rem;
+            border-radius: 0.5rem;
             font-size: 1rem;
             transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
         }
         
-        body.dark .form-input {
-            background-color: var(--gray-700);
+        body.dark .form-input, body.dark .form-textarea {
+            background-color: var(--gray-800);
             border-color: var(--gray-600);
             color: var(--gray-100);
         }
         
-        .form-input:focus {
+        .form-input:focus, .form-textarea:focus {
             outline: none;
             border-color: var(--teal-500);
             box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.25);
         }
         
         .form-textarea {
-            width: 100%;
-            min-height: 6rem;
-            padding: 0.5rem 0.75rem;
-            background-color: var(--gray-50);
-            border: 1px solid var(--gray-300);
-            border-radius: 0.375rem;
-            font-size: 1rem;
+            min-height: 8rem;
             resize: vertical;
-            transition: all 0.3s ease;
-        }
-        
-        body.dark .form-textarea {
-            background-color: var(--gray-700);
-            border-color: var(--gray-600);
-            color: var(--gray-100);
-        }
-        
-        .form-textarea:focus {
-            outline: none;
-            border-color: var(--teal-500);
-            box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.25);
-        }
-        
-        .form-actions {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-        
-        @media (min-width: 640px) {
-            .form-actions {
-                flex-direction: row;
-                justify-content: space-between;
-            }
         }
         
         .generate-button {
@@ -691,19 +699,20 @@
             gap: 0.5rem;
             color: white;
             font-weight: 600;
-            padding: 0.5rem 1.25rem;
+            padding: 0.75rem 1.5rem;
             border-radius: 9999px;
-            background: linear-gradient(to right, var(--purple-500), var(--indigo-600));
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            background-image: linear-gradient(to right, var(--purple-500), var(--indigo-600));
+            box-shadow: 0 4px 15px 0 rgba(168, 85, 247, 0.3);
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            background-size: 200% auto;
         }
         
         .generate-button:hover {
+            background-position: right center;
             transform: scale(1.05);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            background: linear-gradient(to right, var(--purple-600), var(--indigo-600));
+            box-shadow: 0 10px 20px rgba(168, 85, 247, 0.4);
         }
         
         .generate-button.disabled {
@@ -716,7 +725,7 @@
         /* Footer */
         footer {
             background-color: var(--gray-100);
-            padding: 2rem 1rem;
+            padding: 3rem 1rem 2rem;
             text-align: center;
         }
         
@@ -734,6 +743,7 @@
         .footer-social a {
             color: var(--gray-600);
             transition: color 0.3s ease;
+            font-size: 1.5rem;
         }
         
         body.dark .footer-social a {
@@ -764,10 +774,10 @@
             justify-content: center;
             width: 3rem;
             height: 3rem;
-            border-radius: 9999px;
+            border-radius: 50%;
             background: linear-gradient(to right, var(--teal-400), var(--blue-500));
             color: white;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            box-shadow: 0 4px 15px rgba(49, 196, 190, 0.4);
             cursor: pointer;
             transition: all 0.3s ease;
             opacity: 0;
@@ -780,8 +790,8 @@
         }
         
         .scroll-top:hover {
-            transform: translateY(-0.25rem);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transform: translateY(-0.25rem) scale(1.05);
+            box-shadow: 0 10px 20px rgba(49, 196, 190, 0.5);
         }
         
         /* Animations */
@@ -798,31 +808,17 @@
         
         .animate-fadeInUp {
             animation: fadeInUp 0.6s ease-out forwards;
+            opacity: 0; /* Start hidden */
         }
         
-        .animate-delay-100 {
-            animation-delay: 0.1s;
-        }
-        
-        .animate-delay-200 {
-            animation-delay: 0.2s;
-        }
-        
-        .animate-delay-300 {
-            animation-delay: 0.3s;
-        }
-        
-        .animate-delay-400 {
-            animation-delay: 0.4s;
-        }
+        .animate-delay-100 { animation-delay: 0.1s; }
+        .animate-delay-200 { animation-delay: 0.2s; }
+        .animate-delay-300 { animation-delay: 0.3s; }
+        .animate-delay-400 { animation-delay: 0.4s; }
         
         @keyframes spin {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
         
         .animate-spin {
@@ -831,20 +827,20 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header id="header">
         <div class="container">
             <nav>
-                <a href="#home" class="logo">Aleem</a>
+                <a href="#home" class="logo gradient-text">Aleem</a>
                 <div class="nav-links">
                     <a href="#home" class="nav-link">Home</a>
                     <a href="#about" class="nav-link">About</a>
+                    <a href="#projects" class="nav-link">Projects</a>
                     <a href="#certificates" class="nav-link">Certificates</a>
                     <a href="#contact" class="nav-link">Contact</a>
                 </div>
                 <div class="header-buttons">
-                    <a href="/latest_.pdf" download="Aleem-Resume.pdf" class="gradient-button hidden md:inline-block small">
-                        <i class="fas fa-download mr-2"></i> Resume
+                    <a href="latest_.pdf" download="Aleem-Resume.pdf" class="gradient-button small">
+                        <i class="fas fa-download" style="margin-right: 0.5rem;"></i> Resume
                     </a>
                     <button id="theme-toggle" class="theme-toggle">
                         <i class="fas fa-moon"></i>
@@ -854,7 +850,6 @@
         </div>
     </header>
 
-    <!-- Profile Section -->
     <section id="home" class="profile-section">
         <div class="container">
             <div class="profile-content">
@@ -863,26 +858,16 @@
                         Hi, I'm <span class="gradient-text">Aleem</span>
                     </h1>
                     <p id="profile-bio" class="profile-bio">
-                        Detail-oriented Data Science undergraduate with a strong foundation in machine learning, statistical analysis, and data visualization. Proficient in Python, SQL, Power BI, and Tableau with hands-on experience developing end-to-end data projects. Seeking to leverage analytical and technical skills to contribute to a data-driven team.
+                        Detail-oriented Data Science undergraduate with a strong foundation in machine learning, statistical analysis, and data visualization. Proficient in Python, SQL, Power BI, and Tableau with hands-on experience developing end-to-end data projects. Seeking to leverage analytical and technical skills to contribute to a data-driven team as a Data Analyst or Data Scientist.
                     </p>
                     <div class="profile-actions">
                         <a href="#contact" class="gradient-button">
-                            <i class="fas fa-envelope mr-2"></i> Contact Me
+                            <i class="fas fa-paper-plane" style="margin-right: 0.5rem;"></i> Contact Me
                         </a>
-                        <div class="rewrite-bio">
-                            <button id="rewrite-button" class="social-icon" title="Rewrite Bio with AI">
-                                <i class="fas fa-sparkles"></i>
-                            </button>
-                            <div id="tone-selector" class="tone-selector">
-                                <button class="tone-option" data-tone="professional">More Professional</button>
-                                <button class="tone-option" data-tone="concise">More Concise</button>
-                                <button class="tone-option" data-tone="first-person">First-Person Narrative</button>
-                            </div>
-                        </div>
-                        <a href="https://www.linkedin.com/in/aleem-m-668046259/" target="_blank" class="social-icon">
+                        <a href="https://linkedin.com/in/aleem-m" target="_blank" class="social-icon" aria-label="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="https://github.com/aleem1991" target="_blank" class="social-icon">
+                        <a href="https://github.com/aleem1991" target="_blank" class="social-icon" aria-label="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
@@ -897,10 +882,9 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title animate-fadeInUp">About Me</h2>
+            <h2 class="section-title gradient-text animate-fadeInUp">About Me</h2>
             <div class="about-grid">
                 <div class="about-card animate-fadeInUp animate-delay-100">
                     <h3 class="about-card-title">Education</h3>
@@ -909,71 +893,56 @@
                     <p class="education-detail">CGPA: 8.956/9.5</p>
                     <p class="education-detail">Expected 2026</p>
                 </div>
-                <div class="about-card animate-fadeInUp animate-delay-200">
-                    <h3 class="about-card-title">My Skills</h3>
-                    <div class="skills-container">
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">Python</span>
-                                <span class="skill-percent">95%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-percent="95"></div>
-                            </div>
+                <div class="skills-card animate-fadeInUp animate-delay-200">
+                    <h3 class="about-card-title">Technical Skills</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item"><i class="fab fa-python"></i><span class="skill-name">Python</span></div>
+                        <div class="skill-item"><i class="fas fa-database"></i><span class="skill-name">SQL</span></div>
+                        <div class="skill-item"><i class="fas fa-chart-bar"></i><span class="skill-name">Tableau</span></div>
+                        <div class="skill-item"><i class="fas fa-chart-pie"></i><span class="skill-name">Power BI</span></div>
+                        <div class="skill-item"><i class="fas fa-robot"></i><span class="skill-name">Scikit-learn</span></div>
+                        <div class="skill-item"><i class="fas fa-brain"></i><span class="skill-name">TensorFlow</span></div>
+                        <div class="skill-item"><i class="fab fa-aws"></i><span class="skill-name">AWS</span></div>
+                        <div class="skill-item"><i class="fab fa-react"></i><span class="skill-name">React</span></div>
+                        <div class="skill-item"><i class="fab fa-java"></i><span class="skill-name">Java</span></div>
+                        <div class="skill-item"><i class="fab fa-git-alt"></i><span class="skill-name">Git</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title gradient-text animate-fadeInUp">Projects</h2>
+            <div class="projects-grid">
+                <div class="card card-border-gradient animate-fadeInUp animate-delay-100">
+                    <div class="card-content">
+                        <h3 class="card-title"><i class="fas fa-search-dollar" style="margin-right: 0.5rem;"></i> Real-Time Crypto Anomaly Detector</h3>
+                        <p class="project-description">Engineered an end-to-end anomaly detection system to monitor live cryptocurrency trades from the Binance API, using an Isolation Forest model to flag unusual transactions in real-time for immediate analysis on a streaming Power BI dashboard.</p>
+                        <div class="project-footer">
+                            <p class="project-tech-stack"><strong>Tech:</strong> Python, Scikit-learn, Power BI</p>
+                            <a href="https://github.com/aleem1991/real-time-crypto-anomaly-detector" target="_blank" class="project-link">View Project &rarr;</a>
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">SQL</span>
-                                <span class="skill-percent">90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-percent="90"></div>
-                            </div>
+                    </div>
+                </div>
+                <div class="card card-border-gradient animate-fadeInUp animate-delay-200">
+                    <div class="card-content">
+                        <h3 class="card-title"><i class="fas fa-bullhorn" style="margin-right: 0.5rem;"></i> Ad Performance & Ethics Predictor</h3>
+                        <p class="project-description">Developed an XGBoost and NLP tool to predict digital ad performance and detect unethical content. Deployed as a web app using Streamlit and FastAPI, utilizing SHAP for model interpretability and OCR for text extraction from creatives.</p>
+                        <div class="project-footer">
+                            <p class="project-tech-stack"><strong>Tech:</strong> Python, XGBoost, Streamlit</p>
+                            <a href="https://ethical-ad-predictor-gtddttevsrm2e7rcxc2fbq.streamlit.app/" target="_blank" class="project-link">View Project &rarr;</a>
                         </div>
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">Tableau & Power BI</span>
-                                <span class="skill-percent">90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-percent="90"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">Machine Learning</span>
-                                <span class="skill-percent">85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-percent="85"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">React</span>
-                                <span class="skill-percent">75%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-percent="75"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">Java & C++</span>
-                                <span class="skill-percent">70%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-percent="70"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-header">
-                                <span class="skill-name">AWS</span>
-                                <span class="skill-percent">65%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" data-percent="65"></div>
-                            </div>
+                    </div>
+                </div>
+                <div class="card card-border-gradient animate-fadeInUp animate-delay-300">
+                    <div class="card-content">
+                        <h3 class="card-title"><i class="fas fa-traffic-light" style="margin-right: 0.5rem;"></i> Traffic Sign Recognition System</h3>
+                        <p class="project-description">Built and trained a Convolutional Neural Network (CNN) with TensorFlow and OpenCV to classify traffic signs, achieving 92% accuracy. Enhanced model generalization and prevented overfitting through image preprocessing and augmentation.</p>
+                        <div class="project-footer">
+                            <p class="project-tech-stack"><strong>Tech:</strong> Python, TensorFlow, OpenCV</p>
+                            <a href="https://github.com/aleem1991/Computer-Vision-traffic-sign-recognition-" target="_blank" class="project-link">View Project &rarr;</a>
                         </div>
                     </div>
                 </div>
@@ -981,74 +950,59 @@
         </div>
     </section>
 
-    <!-- Certificates Section -->
     <section id="certificates" class="section">
         <div class="container">
-            <h2 class="section-title animate-fadeInUp">Certificates</h2>
+            <h2 class="section-title gradient-text animate-fadeInUp">Certifications & Achievements</h2>
             <div class="certificates-grid">
-                <div class="certificate-card animate-fadeInUp animate-delay-100">
-                    <div class="certificate-content">
-                        <h3 class="certificate-title">Generative AI for Software Development</h3>
-                        <p class="certificate-issuer">IBM</p>
-                        <a href="cert-gen-ai.pdf"  target="_blank" class="certificate-download">
-                            Download Certificate <i class="fas fa-download"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="certificate-card animate-fadeInUp animate-delay-150">
-                    <div class="certificate-content">
-                        <h3 class="certificate-title">Predictive Analysis with Excel</h3>
-                        <p class="certificate-issuer">BMSCE</p>
-                        <a href="cert-excel.pdf" target="_blank" class="certificate-download">
-                            Download Certificate <i class="fas fa-download"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="certificate-card animate-fadeInUp animate-delay-200">
-                    <div class="certificate-content">
-                        <h3 class="certificate-title">AI for Entrepreneurship</h3>
-                        <p class="certificate-issuer">Intel</p>
-                        <a href="cert-ai-entrepreneur.pdf" target="_blank" class="certificate-download">
-                            Download Certificate <i class="fas fa-download"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="certificate-card animate-fadeInUp animate-delay-100">
-                    <div class="certificate-content">
-                        <h3 class="certificate-title">Introducing DAX Video Course</h3>
-                        <p class="certificate-issuer">Maven Analytics</p>
-                        <a href="cert-dax.pdf" target="_blank" class="certificate-download">
-                            Download Certificate <i class="fas fa-download"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="certificate-card animate-fadeInUp animate-delay-150">
-                    <div class="certificate-content">
-                        <h3 class="certificate-title">Python Programming Essentials</h3>
-                        <p class="certificate-issuer">Infosys</p>
-                        <a href="cert-python.pdf" target="_blank" class="certificate-download">
-                            Download Certificate <i class="fas fa-download"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="certificate-card animate-fadeInUp animate-delay-200">
-                    <div class="certificate-content">
-                        <h3 class="certificate-title">SAP Hackfest 2025 Participant</h3>
+                <div class="card animate-fadeInUp animate-delay-100">
+                    <div class="card-content">
+                        <h3 class="card-title">SAP Hackfest 2025 Participant</h3>
                         <p class="certificate-issuer">SAP</p>
-                        <a href="#" class="certificate-download">
-                            Download Certificate <i class="fas fa-download"></i>
-                        </a>
+                    </div>
+                </div>
+                <div class="card animate-fadeInUp animate-delay-150">
+                    <div class="card-content">
+                        <h3 class="card-title">Generative AI for Software Dev</h3>
+                        <p class="certificate-issuer">IBM</p>
+                        <a href="cert-gen-ai.pdf" target="_blank" class="certificate-link">View Certificate &rarr;</a>
+                    </div>
+                </div>
+                <div class="card animate-fadeInUp animate-delay-200">
+                    <div class="card-content">
+                        <h3 class="card-title">Predictive Analysis with Excel</h3>
+                        <p class="certificate-issuer">BMSCE</p>
+                         <a href="cert-excel.pdf" target="_blank" class="certificate-link">View Certificate &rarr;</a>
+                    </div>
+                </div>
+                <div class="card animate-fadeInUp animate-delay-100">
+                    <div class="card-content">
+                        <h3 class="card-title">AI for Entrepreneurship</h3>
+                        <p class="certificate-issuer">Intel</p>
+                        <a href="cert-ai-entrepreneur.pdf" target="_blank" class="certificate-link">View Certificate &rarr;</a>
+                    </div>
+                </div>
+                <div class="card animate-fadeInUp animate-delay-150">
+                    <div class="card-content">
+                        <h3 class="card-title">Introducing DAX Video Course</h3>
+                        <p class="certificate-issuer">Maven Analytics</p>
+                        <a href="cert-dax.pdf" target="_blank" class="certificate-link">View Certificate &rarr;</a>
+                    </div>
+                </div>
+                <div class="card animate-fadeInUp animate-delay-200">
+                    <div class="card-content">
+                        <h3 class="card-title">Python Programming Essentials</h3>
+                        <p class="certificate-issuer">Infosys</p>
+                        <a href="cert-python.pdf" target="_blank" class="certificate-link">View Certificate &rarr;</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container">
             <div class="contact-container">
-                <h2 class="section-title animate-fadeInUp">Get In Touch</h2>
+                <h2 class="section-title gradient-text animate-fadeInUp">Get In Touch</h2>
                 <p class="contact-description animate-fadeInUp">
                     I'm currently seeking opportunities in Data Science and Analysis. Feel free to reach out directly or use the AI assistant below to draft a message.
                 </p>
@@ -1059,14 +1013,14 @@
                     </div>
                     <div class="form-group">
                         <label for="message" class="form-label">Your Message</label>
-                        <textarea id="message" class="form-textarea" placeholder="Your message will appear here..." rows="4"></textarea>
+                        <textarea id="message" class="form-textarea" placeholder="Your message will appear here..."></textarea>
                     </div>
                     <div class="form-actions">
                         <button id="generate-button" class="generate-button">
-                            <i class="fas fa-sparkles"></i> ✨ Generate Draft
+                            <i class="fas fa-wand-magic-sparkles"></i> &nbsp;Generate Draft
                         </button>
                         <a id="email-button" href="#" class="gradient-button small disabled">
-                            <i class="fas fa-envelope mr-2"></i> Send via Email
+                            <i class="fas fa-paper-plane" style="margin-right: 0.5rem;"></i> Send Email
                         </a>
                     </div>
                 </div>
@@ -1074,83 +1028,40 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-social">
-                <a href="https://www.linkedin.com/in/aleem-m-668046259/" target="_blank">
-                    <i class="fab fa-linkedin-in fa-lg"></i>
-                </a>
-                <a href="https://github.com/aleem1991" target="_blank">
-                    <i class="fab fa-github fa-lg"></i>
-                </a>
-                <a href="mailto:22BTDS143@GCU.EDU.IN">
-                    <i class="fas fa-envelope fa-lg"></i>
-                </a>
+                <a href="https://linkedin.com/in/aleem-m" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/aleem1991" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:22BTDS143@GCU.EDU.IN" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
             <p class="footer-copyright">© 2025 Aleem. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- Scroll to top button -->
-    <button id="scroll-top" class="scroll-top">
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
     <script>
-        // Portfolio Data
-        const portfolioData = {
-            name: "Aleem",
-            bio: "Detail-oriented Data Science undergraduate with a strong foundation in machine learning, statistical analysis, and data visualization. Proficient in Python, SQL, Power BI, and Tableau with hands-on experience developing end-to-end data projects. Seeking to leverage analytical and technical skills to contribute to a data-driven team.",
-            education: {
-                degree: "B.E. Computer Science (Data Science)",
-                university: "Garden City University, Bangalore",
-                cgpa: "8.956/9.5",
-                year: "Expected 2026"
-            },
-            contact: {
-                email: "22BTDS143@GCU.EDU.IN",
-                linkedin: "https://www.linkedin.com/in/aleem-m-668046259/",
-                github: "https://github.com/aleem1991",
-            },
-            skills: [
-                { name: "Python", level: 95 },
-                { name: "SQL", level: 90 },
-                { name: "Tableau & Power BI", level: 90 },
-                { name: "Machine Learning", level: 85 },
-                { name: "React", level: 75 },
-                { name: "Java & C++", level: 70 },
-                { name: "AWS", level: 65 },
-            ],
-            projects: [
-                { name: "Real-Time Crypto Anomaly Detector", description: "Engineered an end-to-end anomaly detection system to monitor live cryptocurrency trades from the Binance API using an Isolation Forest model." },
-                { name: "Ad Performance and Ethics Predictor", description: "Developed an XGBoost and NLP-based tool to predict the performance of digital advertisements and detect unethical content, deployed with Streamlit." },
-                { name: "Traffic Sign Recognition System", description: "Built and trained a Convolutional Neural Network (CNN) with TensorFlow to classify traffic signs with 92% accuracy." },
-            ],
-            certificates: [
-                { title: "Generative AI for Software Development", issuer: "IBM", file: "cert-gen-ai.pdf" },
-                { title: "Predictive Analysis with Excel", issuer: "BMSCE", file: "cert-excel.pdf" },
-                { title: "AI for Entrepreneurship", issuer: "Intel", file: "cert-ai-entrepreneur.pdf" },
-                { title: "Introducing DAX Video Course", issuer: "Maven Analytics", file: "cert-dax.pdf" },
-                { title: "Python Programming Essentials", issuer: "Infosys", file: "cert-python.pdf" },
-                { title: "SAP Hackfest 2025 Participant", issuer: "SAP", file: "cert-sap.pdf" },
-            ],
-            resumeUrl: "/latest_.pdf"
-        };
-
+        // --- SCRIPT FOR DYNAMIC FUNCTIONALITY ---
+        
         // DOM Elements
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = themeToggle.querySelector('i');
-        const rewriteButton = document.getElementById('rewrite-button');
-        const toneSelector = document.getElementById('tone-selector');
-        const profileBio = document.getElementById('profile-bio');
         const generateButton = document.getElementById('generate-button');
         const roleInput = document.getElementById('role');
         const messageTextarea = document.getElementById('message');
         const emailButton = document.getElementById('email-button');
         const scrollTopButton = document.getElementById('scroll-top');
         const header = document.getElementById('header');
-        const skillProgressBars = document.querySelectorAll('.skill-progress');
+
+        // Portfolio Data (can be updated easily)
+        const portfolioData = {
+            contactEmail: "22BTDS143@GCU.EDU.IN",
+            skills: ["Python", "SQL", "Tableau", "Power BI", "Machine Learning", "TensorFlow", "React", "AWS"],
+            projects: ["Real-Time Crypto Anomaly Detector", "Ad Performance & Ethics Predictor", "Traffic Sign Recognition System"]
+        };
 
         // Dark Mode Toggle
         function toggleDarkMode() {
@@ -1163,38 +1074,15 @@
         function initTheme() {
             const savedTheme = localStorage.getItem('theme');
             const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            
             if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
                 document.body.classList.add('dark');
                 themeIcon.className = 'fas fa-sun';
             }
         }
 
-        // Rewrite Bio with AI
-        function rewriteBio(tone) {
-            const originalBio = portfolioData.bio;
-            profileBio.textContent = "✨ Generating new bio...";
-            
-            // Simulate API call delay
-            setTimeout(() => {
-                let newBio = originalBio;
-                
-                if (tone === 'professional') {
-                    newBio = "Data Science undergraduate specializing in machine learning, statistical analysis, and data visualization. Highly proficient in Python, SQL, Power BI, and Tableau with demonstrated experience in developing comprehensive data solutions. Eager to apply analytical expertise to drive data-informed decisions in a professional setting.";
-                } else if (tone === 'concise') {
-                    newBio = "Data Science student skilled in ML, Python, SQL, and data visualization. Experience in end-to-end data projects. Seeking opportunities to apply analytical skills.";
-                } else if (tone === 'first-person') {
-                    newBio = "As a Data Science student, I specialize in machine learning, statistical analysis, and data visualization. I'm proficient in Python, SQL, Power BI, and Tableau with hands-on experience in developing data solutions. I'm seeking opportunities where I can leverage my skills to contribute to data-driven decision-making.";
-                }
-                
-                profileBio.textContent = newBio;
-            }, 1500);
-        }
-
-        // Generate Message with AI
+        // Generate Message with AI (Simulation)
         function generateMessage() {
             const role = roleInput.value.trim();
-            
             if (!role) {
                 alert("Please enter your role or company first.");
                 return;
@@ -1202,133 +1090,73 @@
             
             generateButton.classList.add('disabled');
             generateButton.innerHTML = '<i class="fas fa-spinner animate-spin"></i> Generating...';
-            messageTextarea.value = "✨ Generating message...";
+            messageTextarea.value = "✨ Generating a professional and personalized message...";
             
-            // Simulate API call delay
             setTimeout(() => {
-                const skills = portfolioData.skills.map(skill => skill.name);
-                const randomSkill = skills[Math.floor(Math.random() * skills.length)];
-                const projects = portfolioData.projects.map(project => project.name);
-                const randomProject = projects[Math.floor(Math.random() * projects.length)];
-                
-                const message = `Dear Aleem,\n\nI came across your portfolio and was impressed by your expertise in ${randomSkill}, particularly your work on the "${randomProject}" project. As a ${role}, I believe your skills would be a great fit for an opportunity at our organization. Would you be available for a brief discussion next week?\n\nBest regards`;
+                const randomSkill = portfolioData.skills[Math.floor(Math.random() * portfolioData.skills.length)];
+                const randomProject = portfolioData.projects[Math.floor(Math.random() * portfolioData.projects.length)];
+                const message = `Subject: Inquiry from a ${role}\n\nDear Aleem,\n\nI trust this message finds you well.\n\nI am writing to you today as a ${role}. I have had the opportunity to review your portfolio and was particularly impressed with your project, "${randomProject}," and your proficiency in ${randomSkill}.\n\nYour skills could be a valuable asset to our team, and I would be keen to discuss potential opportunities with you.\n\nPlease let me know if you would be available for a brief introductory call next week.\n\nThank you for your time and consideration.\n\nBest regards,`;
                 
                 messageTextarea.value = message;
                 generateButton.classList.remove('disabled');
-                generateButton.innerHTML = '<i class="fas fa-sparkles"></i> ✨ Generate Draft';
-                emailButton.classList.remove('disabled');
-                emailButton.href = `mailto:${portfolioData.contact.email}?body=${encodeURIComponent(message)}`;
+                generateButton.innerHTML = '<i class="fas fa-wand-magic-sparkles"></i> &nbsp;Generate Draft';
+                updateEmailButton();
             }, 2000);
         }
 
-        // Scroll to top functionality
-        function toggleScrollTopButton() {
-            if (window.scrollY > 300) {
-                scrollTopButton.classList.add('visible');
+        function updateEmailButton() {
+            if (messageTextarea.value.trim()) {
+                emailButton.classList.remove('disabled');
+                const subject = `Inquiry from ${roleInput.value.trim() || 'a Visitor'}`;
+                emailButton.href = `mailto:${portfolioData.contactEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(messageTextarea.value)}`;
             } else {
-                scrollTopButton.classList.remove('visible');
+                emailButton.classList.add('disabled');
             }
         }
 
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+        // --- SCROLL-BASED FUNCTIONALITY ---
+        function handleScroll() {
+            // Scroll Top Button
+            scrollTopButton.classList.toggle('visible', window.scrollY > 300);
+            // Header Style
+            header.classList.toggle('scrolled', window.scrollY > 20);
         }
-
-        // Header scroll effect
-        function updateHeaderOnScroll() {
-            if (window.scrollY > 20) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        }
-
-        // Animate skill bars when in view
-        function animateSkillBars() {
-            skillProgressBars.forEach(bar => {
-                const rect = bar.parentElement.getBoundingClientRect();
-                const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
-                
-                if (isVisible && !bar.dataset.animated) {
-                    const percent = bar.dataset.percent;
-                    bar.style.transform = `scaleX(${percent / 100})`;
-                    bar.dataset.animated = true;
-                }
-            });
-        }
-
-        // Initialize animations when elements come into view
+        
+        // --- ANIMATION ON VIEW ---
         function initAnimations() {
-            const animateElements = document.querySelectorAll('.animate-fadeInUp');
-            
-            animateElements.forEach(el => {
-                const rect = el.getBoundingClientRect();
-                const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
-                
-                if (isVisible) {
-                    el.style.opacity = 1;
-                    el.style.transform = 'translateY(0)';
-                }
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-fadeInUp').forEach(el => {
+                observer.observe(el);
             });
         }
-
-        // Initialize everything
+        
+        // --- INITIALIZATION ---
         function init() {
             initTheme();
             
-            // Event listeners
+            // Event Listeners
             themeToggle.addEventListener('click', toggleDarkMode);
-            rewriteButton.addEventListener('click', () => {
-                toneSelector.style.display = toneSelector.style.display === 'block' ? 'none' : 'block';
-            });
-            
-            document.querySelectorAll('.tone-option').forEach(option => {
-                option.addEventListener('click', (e) => {
-                    const tone = e.target.dataset.tone;
-                    toneSelector.style.display = 'none';
-                    rewriteBio(tone);
-                });
-            });
-            
             generateButton.addEventListener('click', generateMessage);
-            scrollTopButton.addEventListener('click', scrollToTop);
+            scrollTopButton.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+            messageTextarea.addEventListener('input', updateEmailButton);
+            roleInput.addEventListener('input', updateEmailButton);
             
-            roleInput.addEventListener('input', () => {
-                if (!roleInput.value.trim()) {
-                    generateButton.classList.add('disabled');
-                } else {
-                    generateButton.classList.remove('disabled');
-                }
-            });
+            window.addEventListener('scroll', handleScroll);
             
-            messageTextarea.addEventListener('input', () => {
-                if (messageTextarea.value.trim()) {
-                    emailButton.classList.remove('disabled');
-                    emailButton.href = `mailto:${portfolioData.contact.email}?body=${encodeURIComponent(messageTextarea.value)}`;
-                } else {
-                    emailButton.classList.add('disabled');
-                }
-            });
-            
-            // Scroll events
-            window.addEventListener('scroll', () => {
-                toggleScrollTopButton();
-                updateHeaderOnScroll();
-                animateSkillBars();
-                initAnimations();
-            });
-            
-            // Initial animations
-            animateSkillBars();
+            // Initial states
+            handleScroll();
             initAnimations();
-            updateHeaderOnScroll();
-            toggleScrollTopButton();
         }
 
-        // Initialize when DOM is loaded
         document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
